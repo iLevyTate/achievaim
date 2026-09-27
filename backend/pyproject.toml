@@ -8,23 +8,23 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-argon2-cffi = "23.1.0"
-beanie = "1.23.6"
-fastapi = {version = "0.104.1", extras = ["all"]}
-gunicorn = "21.2.0"
-httpx = "0.25.1"
+argon2-cffi = "25.1.0"
+beanie = "1.30.0"
+fastapi = {version = "0.141.1", extras = ["all"]}
+gunicorn = "26.2.0"
+httpx = "0.27.2"
 passlib = "1.7.4"
-pydantic = "2.4.2"
-pydantic-settings = "2.0.3"
-pyjwt = "2.8.0"
-uvicorn = {version = "0.24.0.post1", extras = ["standard"]}
+pydantic = "2.13.5"
+pydantic-settings = "2.15.0"
+pyjwt = "2.15.0"
+uvicorn = {version = "0.54.0", extras = ["standard"]}
 
 [tool.poetry.group.dev.dependencies]
-black = "23.10.1"
+black = "26.5.1"
 mypy = "1.7.1"
-pytest = "7.4.3"
-pytest-asyncio = "0.21.1"
-pytest-cov = "4.1.0"
+pytest = "9.1.1"
+pytest-asyncio = "1.4.0"
+pytest-cov = "7.1.0"
 ruff = "0.1.5"
 
 [build-system]
@@ -68,6 +68,7 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 addopts = "--cov=app --cov-report term-missing"
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
 
 [tool.ruff]
 select = ["E", "F", "UP", "I001", "T201", "T203"]
