@@ -46,7 +46,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 EXPOSE 80
 
-ENTRYPOINT ["gunicorn", "app.main:app", "--forwarded-allow-ips='*'", "--access-logfile", "-", "-k", "uvicorn.workers.UvicornWorker", "-b", ":8000"]
+ENTRYPOINT ["gunicorn", "app.main:app", "--forwarded-allow-ips=*", "--access-logfile", "-", "-k", "uvicorn.workers.UvicornWorker", "-b", ":8000"]
 
 
 FROM builder as dev
