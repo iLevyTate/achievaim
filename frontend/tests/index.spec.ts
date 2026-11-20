@@ -61,7 +61,7 @@ test('end to end sign in', async ({ page }) => {
   await expect(page.getByText('No active goals')).toBeVisible();
   await expect(page.getByLabel('account settings')).toBeVisible();
   await page.getByLabel('create goal').click();
-  await expect(page).toHaveURL('/create-goals');
+  await expect(page).toHaveURL('/create-goals/');
   await page.locator('#goal').fill(goal);
   await page.locator('#save-goal-button').click();
   await expect(page).toHaveURL('/', { timeout: 10000 });

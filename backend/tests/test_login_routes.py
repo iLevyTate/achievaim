@@ -46,7 +46,6 @@ async def test_get_access_token_inactivate_user(test_client, user_with_goals):
             is_admin=user_with_goals.is_admin,
         ),
     )
-    response = await user_with_goals.update({"$set": update_user})
     login_data = {
         "username": user_with_goals.user_name,
         "password": "test_password",
