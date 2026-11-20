@@ -1,4 +1,3 @@
-import asyncio
 from copy import deepcopy
 from datetime import datetime
 from uuid import uuid4
@@ -26,16 +25,6 @@ async def initialize_db():
 async def clear_db():
     yield
     await User.delete_all()
-
-
-@pytest.fixture(scope="session", autouse=True)
-def event_loop():
-    try:
-        loop = asyncio.get_running_loop()
-    except RuntimeError:
-        loop = asyncio.new_event_loop()
-    yield loop
-    loop.close()
 
 
 @pytest.fixture(scope="session")

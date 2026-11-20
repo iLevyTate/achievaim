@@ -124,7 +124,7 @@
 
 @install-backend:
   -cd backend && \
-  poetry install && \
+  poetry install --no-root && \
   cd ..
 
 @install-frontend:

@@ -39,7 +39,7 @@ test('page loads', async ({ page }) => {
   await page.locator('#password').fill(password);
   await page.locator('#verify-password').fill(password);
   await page.locator('#btn-sign-up').click();
-  await expect(page).toHaveURL('/account-settings');
+  await expect(page).toHaveURL(/\/account-settings\/?$/);
   await page.locator('#first-name').fill('');
   await page.locator('#btn-save').click();
   await expect(page.locator('#first-name-error')).toBeVisible();
@@ -61,7 +61,7 @@ test('last name required', async ({ page }) => {
   await page.locator('#password').fill(password);
   await page.locator('#verify-password').fill(password);
   await page.locator('#btn-sign-up').click();
-  await expect(page).toHaveURL('/account-settings');
+  await expect(page).toHaveURL(/\/account-settings\/?$/);
   await page.locator('#last-name').fill('');
   await page.locator('#btn-save').click();
   await expect(page.locator('#last-name-error')).toBeVisible();
@@ -83,7 +83,7 @@ test('user name required', async ({ page }) => {
   await page.locator('#password').fill(password);
   await page.locator('#verify-password').fill(password);
   await page.locator('#btn-sign-up').click();
-  await expect(page).toHaveURL('/account-settings');
+  await expect(page).toHaveURL(/\/account-settings\/?$/);
   await page.locator('#user-name').fill('');
   await page.locator('#btn-save').click();
   await expect(page.locator('#user-name-error')).toBeVisible();
@@ -105,7 +105,7 @@ test('password required', async ({ page }) => {
   await page.locator('#password').fill(password);
   await page.locator('#verify-password').fill(password);
   await page.locator('#btn-sign-up').click();
-  await expect(page).toHaveURL('/account-settings');
+  await expect(page).toHaveURL(/\/account-settings\/?$/);
   await page.locator('#password').fill('');
   await page.locator('#btn-save').click();
   await expect(page.locator('#password-error')).toBeVisible();
@@ -127,16 +127,19 @@ test('passwords match error', async ({ page }) => {
   await page.locator('#password').fill(password);
   await page.locator('#verify-password').fill(password);
   await page.locator('#btn-sign-up').click();
-  await expect(page).toHaveURL('/account-settings');
+  await expect(page).toHaveURL(/\/account-settings\/?$/);
   await page.locator('#password').fill('a');
   await page.locator('#verify-password').fill('b');
   await page.locator('#btn-save').click();
   await expect(page.locator('#password-verify-error')).toBeVisible();
 });
 
-test('not logged in buttons', async ({ page }) => {
+test('unauthenticated account settings redirects to sign in', async ({ page }) => {
   await page.goto('/account-settings');
-  await expect(page.locator('#btn-sign-up')).toBeVisible();
+  await expect(page).toHaveURL('/');
+  await expect(
+    page.getByRole('link', { name: 'Are your Goals Smart yet? Sign up here!' }),
+  ).toBeVisible();
   await expect(page.locator('#btn-save')).not.toBeVisible();
   await expect(page.locator('#btn-log-out')).not.toBeVisible();
   await expect(page.locator('#btn-delete')).not.toBeVisible();

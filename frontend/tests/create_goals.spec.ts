@@ -84,7 +84,7 @@ test('end to end create goal', async ({ page }) => {
   await page.locator('#btn-sign-up').click();
   await expect(page.locator('#btn-log-out')).toBeVisible();
   await page.getByLabel('create goals').click();
-  await expect(page).toHaveURL('/create-goals');
+  await expect(page).toHaveURL(/\/create-goals\/?$/);
   await expect(page.locator('#goal')).toBeVisible();
   await expect(page.locator('#specific')).toBeVisible();
   await expect(page.locator('#measurable')).toBeVisible();
