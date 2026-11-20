@@ -7,7 +7,7 @@ on:
   pull_request:
 jobs:
   build-backend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Set up Docker Buildx
@@ -29,7 +29,7 @@ jobs:
   backend-linting:
     strategy:
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Install just
@@ -67,7 +67,7 @@ jobs:
   backend-testing:
     strategy:
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Install just
@@ -107,7 +107,7 @@ jobs:
     strategy:
       fail-fast: false
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: Install just
@@ -115,7 +115,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: ./frontend/package-lock.json
       - name: Install Dependencies
@@ -128,7 +128,7 @@ jobs:
   frontend-testing:
     strategy:
       fail-fast: false
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build-backend
     steps:
       - uses: actions/checkout@v4
@@ -148,7 +148,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: ./frontend/package-lock.json
       - name: Install Dependencies

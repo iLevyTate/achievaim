@@ -10,7 +10,6 @@ from app.api.v1.api import api_router
 from app.db import init_db
 
 app = FastAPI()
-templates = Jinja2Templates("app/templates")
 app.include_router(api_router)
 templates = Jinja2Templates(directory="app/templates")
 
@@ -31,4 +30,4 @@ async def startup() -> None:  # pragma: no cover
 
 @app.get("/", include_in_schema=False)
 def index(request: Request) -> Any:
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")

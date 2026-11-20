@@ -1,6 +1,6 @@
 ARG APP_ENVIRONMENT=dev
 
-FROM python:3.11-slim-bullseye as builder
+FROM python:3.11-slim-bookworm as builder
 
 ENV \
   PYTHONUNBUFFERED=true \
@@ -28,12 +28,10 @@ COPY pyproject.toml poetry.lock /app/
 
 RUN poetry install --without dev --no-root --no-cache
 
-copy . /app
-
-RUN poetry install --only-root --no-cache
+COPY . /app
 
 
-FROM python:3.11-slim-bullseye as prod
+FROM python:3.11-slim-bookworm as prod
 
 WORKDIR /app
 
