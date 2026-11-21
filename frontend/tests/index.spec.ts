@@ -60,7 +60,7 @@ test('end to end sign in', async ({ page }) => {
   await expect(page.locator('#login-button')).not.toBeVisible();
   await expect(page.getByText('No active goals')).toBeVisible();
   await expect(page.getByLabel('account settings')).toBeVisible();
-  await page.getByLabel('create goal').click();
+  await page.locator('#navbar').getByRole('link', { name: 'create goals', exact: true }).click();
   await expect(page).toHaveURL(/\/create-goals\/?$/);
   await page.locator('#goal').fill(goal);
   await page.locator('#save-goal-button').click();
