@@ -126,7 +126,11 @@
         <!-- Flex container for alignment -->
         <label class="block mb-2 text-xl font-bold rounded-xl" for="goal">Goal</label>
         <div class="dropdown dropdown-right">
-          <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+          <button
+            tabindex="0"
+            aria-label="Goal help"
+            class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -176,7 +180,7 @@
         >
         {#if loadingGenerate}
           <div class="flex items-center justify-center mt-3">
-            <span class="loading loading-infinity loading-md" />
+            <span class="loading loading-infinity loading-md"></span>
           </div>
         {/if}
       </div>
@@ -197,7 +201,11 @@
         >
           <input type="checkbox" class="toggle toggle-primary" bind:checked={specificLocked} />
           <div class="dropdown dropdown-end">
-            <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+            <button
+              tabindex="0"
+              aria-label="Goal help"
+              class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -242,7 +250,11 @@
         >
           <input type="checkbox" class="toggle toggle-primary" bind:checked={measurableLocked} />
           <div class="dropdown dropdown-end">
-            <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+            <button
+              tabindex="0"
+              aria-label="Goal help"
+              class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -286,7 +298,11 @@
         >
           <input type="checkbox" class="toggle toggle-primary" bind:checked={achievableLocked} />
           <div class="dropdown dropdown-end">
-            <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+            <button
+              tabindex="0"
+              aria-label="Goal help"
+              class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -330,7 +346,11 @@
         >
           <input type="checkbox" class="toggle toggle-primary" bind:checked={relevantLocked} />
           <div class="dropdown dropdown-end">
-            <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+            <button
+              tabindex="0"
+              aria-label="Goal help"
+              class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -374,7 +394,11 @@
         >
           <input type="checkbox" class="toggle toggle-primary" bind:checked={timeBoundLocked} />
           <div class="dropdown dropdown-end">
-            <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+            <button
+              tabindex="0"
+              aria-label="Goal help"
+              class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -423,7 +447,11 @@
                       class="flex items-center justify-end w-full mt-2 cursor-pointer label md:ml-2 md:mt-0 md:w-auto"
                     >
                       <div class="dropdown dropdown-end">
-                        <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+                        <button
+                          tabindex="0"
+                          aria-label="Goal help"
+                          class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -474,7 +502,11 @@
               />
               <div class="justify-end w-full mt-2 dropdown dropdown-end md:ml-2 md:mt-0 md:w-auto">
                 <!-- Replaced label tag with div -->
-                <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+                <button
+                  tabindex="0"
+                  aria-label="Goal help"
+                  class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -515,7 +547,11 @@
               />
               <div class="justify-end w-full mt-2 dropdown dropdown-end md:ml-2 md:mt-0 md:w-auto">
                 <!-- Replaced label tag with div -->
-                <button tabindex="0" class="m-3 btn btn-circle btn-ghost btn-xs text-info">
+                <button
+                  tabindex="0"
+                  aria-label="Goal help"
+                  class="m-3 btn btn-circle btn-ghost btn-xs text-info"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -549,7 +585,7 @@
     </div>
 
     <div class="flex">
-      <div class="divider" />
+      <div class="divider"></div>
     </div>
   </div>
 </div>

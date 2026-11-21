@@ -20,7 +20,7 @@
               <div class="flex items-center mb-2">
                 <a href="/edit-goal/{goal.id}" aria-label="edit-goal" title="Edit Goal"> Goal </a>
                 <div class="dropdown dropdown-right">
-                  <button class="btn btn-circle btn-ghost btn-xs text-info">
+                  <button aria-label="Goal help" class="btn btn-circle btn-ghost btn-xs text-info">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

@@ -6,6 +6,17 @@ test('page loads', async ({ page }) => {
   await expect(page.locator('#navbar')).toBeVisible();
 });
 
+test('home navigation highlight follows client-side route changes', async ({ page }) => {
+  await page.goto('/');
+  const home = page.getByRole('link', { name: 'home', exact: true });
+  await expect(home).toHaveClass(/\bbg-white\b/);
+  await page.getByRole('link', { name: /sign up here/i }).click();
+  await expect(page).toHaveURL(/\/signup$/);
+  await expect(home).not.toHaveClass(/\bbg-white\b/);
+  await home.click();
+  await expect(home).toHaveClass(/\bbg-white\b/);
+});
+
 test('first name is required', async ({ page }) => {
   await page.goto('/signup');
   await expect(page.locator('#first-name')).toBeVisible();

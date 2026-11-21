@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import ThemeSelector from './ThemeSelector.svelte';
   import { isLoggedIn } from '$lib/stores/stores';
 
@@ -37,12 +37,12 @@
               href="/"
               aria-label="home"
               title="Home"
-              class={$page.url.pathname === '/' ? 'rounded bg-white' : ''}
+              class={page.url.pathname === '/' ? 'rounded bg-white' : ''}
               on:click={animateSVG}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="stroke-current {$page.url.pathname === '/'
+                class="stroke-current {page.url.pathname === '/'
                   ? 'text-primary'
                   : 'text-white'} h-5 w-5"
                 fill="none"
@@ -63,12 +63,12 @@
               href="/"
               aria-label="home"
               title="Home"
-              class={$page.url.pathname === '/' ? 'rounded bg-white' : ''}
+              class={page.url.pathname === '/' ? 'rounded bg-white' : ''}
               on:click={animateSVG}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="stroke-current {$page.url.pathname === '/'
+                class="stroke-current {page.url.pathname === '/'
                   ? 'text-primary'
                   : 'text-white'} h-5 w-5"
                 fill="none"
@@ -88,12 +88,12 @@
               href="/create-goals"
               aria-label="create goals"
               title="Create Goals"
-              class={$page.url.pathname === '/create-goals' ? 'rounded bg-white' : ''}
+              class={page.url.pathname === '/create-goals' ? 'rounded bg-white' : ''}
               on:click={animateSVG}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="stroke-current {$page.url.pathname === '/create-goals'
+                class="stroke-current {page.url.pathname === '/create-goals'
                   ? 'text-primary'
                   : 'text-white'} h-5 w-5"
                 fill="none"
@@ -113,12 +113,12 @@
               href="/account-settings"
               aria-label="account settings"
               title="Account Settings"
-              class={$page.url.pathname === '/account-settings' ? 'rounded bg-white' : ''}
+              class={page.url.pathname === '/account-settings' ? 'rounded bg-white' : ''}
               on:click={animateSVG}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="stroke-current {$page.url.pathname === '/account-settings'
+                class="stroke-current {page.url.pathname === '/account-settings'
                   ? 'text-primary'
                   : 'text-white'} h-5 w-5"
                 fill="none"
@@ -137,9 +137,9 @@
       </ul>
     </div>
 
-    <div class="flex-1 px-2 mx-2" />
+    <div class="flex-1 px-2 mx-2"></div>
     <div class="flex-none">
-      <ul class="menu menu-horizontal px-1" />
+      <ul class="menu menu-horizontal px-1"></ul>
       <ThemeSelector />
     </div>
   </div>
