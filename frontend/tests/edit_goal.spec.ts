@@ -53,8 +53,9 @@ test('end to end edit goal', async ({ page }) => {
   await expect(page.locator('#toast-message')).toBeVisible();
 
   await page
-    .getByRole('figure', { name: `edit-goal ${goal}` })
-    .getByLabel('edit-goal')
+    .getByRole('figure')
+    .filter({ has: page.getByText(goal, { exact: true }) })
+    .getByRole('link', { name: 'edit-goal', exact: true })
     .click();
   await expect(page.locator('#goal')).toBeVisible();
   await expect(page.locator('#specific')).toBeVisible();
@@ -75,8 +76,9 @@ test('end to end edit goal', async ({ page }) => {
   await expect(page.getByText(goalUpdate)).toBeVisible();
 
   await page
-    .getByRole('figure', { name: `edit-goal ${goalUpdate}` })
-    .getByLabel('edit-goal')
+    .getByRole('figure')
+    .filter({ has: page.getByText(goalUpdate, { exact: true }) })
+    .getByRole('link', { name: 'edit-goal', exact: true })
     .click();
   await page.locator('#delete-goal-button').click();
   await expect(page.locator('#toast-message')).toBeVisible();
