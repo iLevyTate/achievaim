@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.39.0",
-    "@sveltejs/adapter-auto": "^2.1.1",
-    "@sveltejs/kit": "^1.27.5",
+    "@sveltejs/adapter-auto": "^9.0.0",
+    "@sveltejs/kit": "^3.4.0",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.16",
@@ -35,8 +35,8 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "uuid": "^11.1.1",
-    "vite": "^4.5.0",
-    "vitest": "^0.34.6"
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
   },
   "type": "module",
   "dependencies": {
