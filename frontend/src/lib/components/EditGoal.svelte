@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import { page } from '$app/stores';
   import { onMount, createEventDispatcher } from 'svelte';
 
   // NOTE: goalId will be used to get the goal to edit once this is setup
@@ -65,7 +64,7 @@
 </script>
 
 <div class="flex">
-  <div class="divider" />
+  <div class="divider"></div>
 </div>
 <div class="container mx-auto px-4 pt-5 md:max-w-xl lg:max-w-3xl z-10">
   <div class="mb-5">
@@ -88,7 +87,7 @@
       </button>
       {#if loadingGenerate}
         <div class="mt-3 flex justify-center items-center">
-          <span class="loading loading-infinity loading-md" />
+          <span class="loading loading-infinity loading-md"></span>
         </div>
       {/if}
     </div>
@@ -103,7 +102,7 @@
       </button>
       {#if loadingRegenerate}
         <div class="mt-3 flex justify-center items-center">
-          <span class="loading loading-infinity loading-md" />
+          <span class="loading loading-infinity loading-md"></span>
         </div>
       {/if}
     </div>

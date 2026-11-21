@@ -23,7 +23,7 @@
   let activeGoals: GoalOutput[] | null = null;
   let completedGoals: GoalOutput[] | null = null;
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   let userNameError = false;
   let passwordError = false;
@@ -197,20 +197,20 @@
                 <a
                   href="signup"
                   class="label-text-alt link link-hover"
-                  class:active={$page.url.pathname === '/signup'}
+                  class:active={page.url.pathname === '/signup'}
                   >Are your Goals Smart yet? Sign up here!</a
                 >
               </div>
               {#if $isLoading}
                 <div class="mt-6 text-center">
-                  <span class="loading loading-spinner text-primary" id="login-spinner" />
+                  <span class="loading loading-spinner text-primary" id="login-spinner"></span>
                 </div>
               {:else}
                 <div class="form-control mt-6">
                   <button class="btn btn-primary" type="submit" id="login-button">Login</button>
                 </div>
               {/if}
-              <div class="form-control mt-6 text-center text-lg font-bold" />
+              <div class="form-control mt-6 text-center text-lg font-bold"></div>
             </form>
           </div>
         </div>
@@ -234,6 +234,7 @@
                     <span>No active goals. Click the plus button to get SMART goals.</span>
                     <a
                       href="create-goals"
+                      aria-label="Create goals"
                       class="text-base-200 hover:text-base-100 transition duration-300 flex items-center"
                     >
                       <svg

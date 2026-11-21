@@ -354,7 +354,7 @@
           </div>
         </div>
       {:else if $isLoading}
-        <span class="loading loading-spinner text-primary mt-6 md:mt-0" id="sign-up-spinner" />
+        <span class="loading loading-spinner text-primary mt-6 md:mt-0" id="sign-up-spinner"></span>
       {:else}
         <button class="btn btn-primary w-full md:w-auto" type="submit" id="btn-sign-up"
           >Sign Up</button

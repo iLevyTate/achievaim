@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import { browser } from '$app/environment';
+import { browser } from '$app/env';
 import { getGoals } from '$lib/api';
 import type { AccessToken } from '$lib/types';
 import type { GoalOutput } from '$lib/generated';

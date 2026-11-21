@@ -14,7 +14,7 @@
       data-act-class="pl-4"
       class="border rounded-full border-primary flex items-center cursor-pointer w-10 transition-all duration-400 ease-in-out pl-0"
     >
-      <span class="rounded-full w-3 h-3 m-1 bg-primary" />
+      <span class="rounded-full w-3 h-3 m-1 bg-primary"></span>
     </span>
   </div>
   🌚

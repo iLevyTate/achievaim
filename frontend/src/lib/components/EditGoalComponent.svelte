@@ -52,7 +52,7 @@
 </script>
 
 <div class="page-fade-in">
-  <div class="divider" />
+  <div class="divider"></div>
 
   <div class="container shadow-lg rounded-xl mb-4 mx-auto px-4 pt-5 md:max-w-xl lg:max-w-3xl z-10">
     <div class="mb-5">
@@ -75,7 +75,7 @@
         <button id="generate" class="btn btn-primary">Generate</button>
         {#if loadingGenerate}
           <div class="mt-3 flex justify-center items-center">
-            <span class="loading loading-infinity loading-md" />
+            <span class="loading loading-infinity loading-md"></span>
           </div>
         {/if}
       </div>
